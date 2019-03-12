@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CDD91B73-E38A-481D-93D1-E0B6EDC9474E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>InteractorImplementation</RootNamespace>
+    <AssemblyName>InteractorImplementation</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommandAllCourses.cs" />
+    <Compile Include="CommandAllStudents.cs" />
+    <Compile Include="CommandCourseByID.cs" />
+    <Compile Include="CommandNewCourse.cs" />
+    <Compile Include="CommandNewStudent.cs" />
+    <Compile Include="CommandRemoveCourse.cs" />
+    <Compile Include="CommandRemoveStudent.cs" />
+    <Compile Include="CommandStudentByID.cs" />
+    <Compile Include="CommandUpdateCourse.cs" />
+    <Compile Include="CommandUpdateStudent.cs" />
+    <Compile Include="Exceptions.cs" />
+    <Compile Include="Factory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\CourseAdapter.cs" />
+    <Compile Include="Utility\StudentAdapter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{E85418A7-783E-4160-A0B6-D82A99EA7E8D}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InteractorAbstraction\InteractorAbstraction.csproj">
+      <Project>{372D301A-B523-4CA0-A74A-997FDB400F71}</Project>
+      <Name>InteractorAbstraction</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InteractorFactory\InteractorFactory.csproj">
+      <Project>{6C4E5F0F-0665-430C-8F60-3C37425EA960}</Project>
+      <Name>InteractorFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PresenterAbstraction\PresenterAbstraction.csproj">
+      <Project>{736D7025-ADC8-4350-9E5E-BDC3C833A64F}</Project>
+      <Name>PresenterAbstraction</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Repository\RepositoryAbstraction.csproj">
+      <Project>{A4E0ADA5-146B-426D-94CF-BD5003466370}</Project>
+      <Name>RepositoryAbstraction</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

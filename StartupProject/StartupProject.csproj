@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3A551251-740A-4860-8D8C-07E0E53178EC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>StartupProject</RootNamespace>
+    <AssemblyName>StartupProject</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{e85418a7-783e-4160-a0b6-d82a99ea7e8d}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InteractorAbstraction\InteractorAbstraction.csproj">
+      <Project>{372d301a-b523-4ca0-a74a-997fdb400f71}</Project>
+      <Name>InteractorAbstraction</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InteractorFactory\InteractorFactory.csproj">
+      <Project>{6c4e5f0f-0665-430c-8f60-3c37425ea960}</Project>
+      <Name>InteractorFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InteractorImplementation\InteractorImplementation.csproj">
+      <Project>{cdd91b73-e38a-481d-93d1-e0b6edc9474e}</Project>
+      <Name>InteractorImplementation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PresenterAbstraction\PresenterAbstraction.csproj">
+      <Project>{736d7025-adc8-4350-9e5e-bdc3c833a64f}</Project>
+      <Name>PresenterAbstraction</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PresenterFactory\PresenterFactory.csproj">
+      <Project>{676ccee5-c460-48f6-824e-282899e56fa1}</Project>
+      <Name>PresenterFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PresenterImplementation\PresenterImplementation.csproj">
+      <Project>{1a5ca457-4e5c-434f-9dd3-a855f7eab2ee}</Project>
+      <Name>PresenterImplementation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RepositoryFactory\RepositoryFactory.csproj">
+      <Project>{e579f20a-50bf-452b-abd5-f5e82626d2db}</Project>
+      <Name>RepositoryFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RepositoryInMemory\RepositoryImplementation.csproj">
+      <Project>{53538210-dbcf-43f6-80fc-c2374af0cda9}</Project>
+      <Name>RepositoryImplementation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Repository\RepositoryAbstraction.csproj">
+      <Project>{a4e0ada5-146b-426d-94cf-bd5003466370}</Project>
+      <Name>RepositoryAbstraction</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ViewAbstraction\ViewAbstraction.csproj">
+      <Project>{0effa009-c763-4079-aac1-f47f9f27713c}</Project>
+      <Name>ViewAbstraction</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ViewFactory\ViewFactory.csproj">
+      <Project>{32ee92a4-6998-4f5d-a07c-69039b64e67f}</Project>
+      <Name>ViewFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ViewImplementation\ViewImplementation.csproj">
+      <Project>{C44D72DC-3799-471A-B8E1-D9DF2EFA7D5B}</Project>
+      <Name>ViewImplementation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ViewModel\ViewModel.csproj">
+      <Project>{316cd2d3-dc01-4858-b587-c7b9acd48e15}</Project>
+      <Name>ViewModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
